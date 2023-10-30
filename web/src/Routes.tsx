@@ -21,6 +21,8 @@ const Routes = () => {
         <Route path="/posts/{id:Int}" page={PostPostPage} name="post" />
         <Route path="/posts" page={PostPostsPage} name="posts" />
       </Set>
+      <Set wrap={ScaffoldLayout} title="Posts" titleTo="posts" buttonLabel="New Post" buttonTo="newPost">
+      </Set>
       <Set wrap={TreetableLayout}>
       <Route path="/table" page={TablePage} name="table" />
       <Route path="/" page={HomePage} name="home" />

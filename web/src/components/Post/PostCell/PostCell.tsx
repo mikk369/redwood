@@ -9,7 +9,8 @@ export const QUERY = gql`
     post: post(id: $id) {
       id
       title
-      body
+      size
+      type
       createdAt
     }
   }

@@ -53,22 +53,40 @@ const PostForm = (props: PostFormProps) => {
         <FieldError name="title" className="rw-field-error" />
 
         <Label
-          name="body"
+          name="size"
           className="rw-label"
           errorClassName="rw-label rw-label-error"
         >
-          Body
+          Size
         </Label>
 
         <TextField
-          name="body"
-          defaultValue={props.post?.body}
+          name="size"
+          defaultValue={props.post?.size}
           className="rw-input"
           errorClassName="rw-input rw-input-error"
           validation={{ required: true }}
         />
 
-        <FieldError name="body" className="rw-field-error" />
+        <FieldError name="size" className="rw-field-error" />
+
+        <Label
+          name="type"
+          className="rw-label"
+          errorClassName="rw-label rw-label-error"
+        >
+          Type
+        </Label>
+
+        <TextField
+          name="type"
+          defaultValue={props.post?.type}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+          validation={{ required: true }}
+        />
+
+        <FieldError name="type" className="rw-field-error" />
 
         <div className="rw-button-group">
           <Submit disabled={props.loading} className="rw-button rw-button-blue">

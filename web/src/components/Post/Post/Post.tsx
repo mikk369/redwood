@@ -54,8 +54,12 @@ const Post = ({ post }: Props) => {
               <td>{post.title}</td>
             </tr>
             <tr>
-              <th>Body</th>
-              <td>{post.body}</td>
+              <th>Size</th>
+              <td>{post.size}</td>
+            </tr>
+            <tr>
+              <th>Type</th>
+              <td>{post.type}</td>
             </tr>
             <tr>
               <th>Created at</th>

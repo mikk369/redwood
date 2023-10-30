@@ -12,7 +12,8 @@ export const QUERY = gql`
     post: post(id: $id) {
       id
       title
-      body
+      size
+      type
       createdAt
     }
   }
@@ -22,7 +23,8 @@ const UPDATE_POST_MUTATION = gql`
     updatePost(id: $id, input: $input) {
       id
       title
-      body
+      size
+      type
       createdAt
     }
   }

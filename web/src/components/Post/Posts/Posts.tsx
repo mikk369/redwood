@@ -43,7 +43,8 @@ const PostsList = ({ posts }: FindPosts) => {
           <tr>
             <th>Id</th>
             <th>Title</th>
-            <th>Body</th>
+            <th>Size</th>
+            <th>Type</th>
             <th>Created at</th>
             <th>&nbsp;</th>
           </tr>
@@ -53,7 +54,8 @@ const PostsList = ({ posts }: FindPosts) => {
             <tr key={post.id}>
               <td>{truncate(post.id)}</td>
               <td>{truncate(post.title)}</td>
-              <td>{truncate(post.body)}</td>
+              <td>{truncate(post.size)}</td>
+              <td>{truncate(post.type)}</td>
               <td>{timeTag(post.createdAt)}</td>
               <td>
                 <nav className="rw-table-actions">
