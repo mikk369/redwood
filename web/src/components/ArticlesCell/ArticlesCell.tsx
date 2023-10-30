@@ -78,7 +78,7 @@ export const Failure = ({ error }: CellFailureProps) => (
     if (error) return <Failure error={error} />;
 
     return (
-        <div className="card">
+        <div className="card ">
             <div className="flex justify-content-center mb-4">
                 <SelectButton value={filterMode} onChange={(e) => setFilterMode(e.value)} options={filterOptions} />
             </div>
