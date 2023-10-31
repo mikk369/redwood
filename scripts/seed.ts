@@ -36,183 +36,84 @@ export default async () => {
       })
     )
 
-    //USERS
-    const users = [
-      { id: 1, name: 'john', email: 'john@example.com'},
-      { id: 2, name: 'jane', email: 'jane@example.com'},
-      { id: 3, name: 'adam', email: 'adam@example.com'},
-      { id: 4, name: 'sophia', email: 'sophia@example.com'},
-      { id: 5, name: 'alex', email: 'alex@example.com'},
-      { id: 6, name: 'olivia', email: 'olivia@example.com'},
-      { id: 7, name: 'noah', email: 'noah@example.com'},
-      { id: 8, name: 'emma', email: 'emma@example.com'},
-      { id: 9, name: 'liam', email: 'liam@example.com'},
-      { id: 10, name: 'ava', email: 'ava@example.com'},
-        ]
-
-      for (const user of users) {
-        // const [hashedPassword, salt] = hashPassword(user.password)
-        await db.user.create({
-          data: {
-            name: user.name,
-            email: user.email,
-            // hashedPassword,
-            // salt
-          }
-        })
-      }
-
     //POSTS
     const posts = [
       {
-        id: 1,
-        title: 'First Post',
-        size: '10kb',
-        type: 'Text'
-      },
-      {
-        id: 2,
-        title: 'Second Post',
-        size: '20kb',
-        type: 'Image'
-      },
-      {
-        id: 3,
-        title: 'Third Post',
-        size: '15kb',
-        type: 'Document'
-      },
-      {
-        id: 4,
-        title: 'Fourth Post',
-        size: '12kb',
-        type: 'Text'
-      },
-      {
-        id: 5,
-        title: 'Fifth Post',
-        size: '8kb',
-        type: 'Image'
-      },
-      {
-        id: 6,
-        title: 'Sixth Post',
-        size: '18kb',
-        type: 'Text'
-      },
-      {
-        id: 7,
-        title: 'Seventh Post',
-        size: '14kb',
-        type: 'Image'
-      },
-      {
-        id: 8,
-        title: 'Eighth Post',
-        size: '22kb',
-        type: 'Document'
-      },
-      {
-        id: 9,
-        title: 'Ninth Post',
-        size: '9kb',
-        type: 'Text'
-      },
-      {
-        id: 10,
-        title: 'Tenth Post',
-        size: '16kb',
-        type: 'Image'
-      },
-      {
-        id: 11,
-        title: 'Eleventh Post',
-        size: '25kb',
-        type: 'Document'
-      },
-      {
-        id: 12,
-        title: 'Twelfth Post',
-        size: '11kb',
-        type: 'Text'
-      },
-      {
-        id: 13,
-        title: 'Thirteenth Post',
-        size: '19kb',
-        type: 'Image'
-      },
-      {
-        id: 14,
-        title: 'Fourteenth Post',
-        size: '13kb',
-        type: 'Document'
-      },
-      {
-        id: 15,
-        title: 'Fifteenth Post',
-        size: '21kb',
-        type: 'Text'
-      }
-    ];
-
-      for (const post of posts) {
-        await db.post.create({
-          data: {
-            title: post.title,
-            size: post.size,
-            type: post.type,
-            user: {
-              connect: {
-                id: post.id
-              }
-            }
+        key: '0',
+        title: 'Documents',
+        size: '55kb',
+        type: 'Folder',
+        children: [
+          {
+            key: '0-0',
+            title: 'Work',
+            size: '22kb',
+            type: 'Folder',
+            children: [
+              { key: '0-0-0', title: 'Expenses.doc', size: '30kb', type: 'Document' },
+              { key: '0-0-1', title: 'Resume.doc', size: '25kb', type: 'Document' }
+            ]
           },
-        })
-      }
-
-    // //DOCUMENTS
-    const documents = [
-      { id: 1, title: 'Document 1', size: '10kb', type: 'PDF' },
-      { id: 2, title: 'Document 2', size: '15kb', type: 'PDF' },
-      { id: 3, title: 'Document 3', size: '20kb', type: 'DOCX' },
-    ];
-
-    for (const doc of documents) {
-      await db.document.create({
-        data: {
-          title: doc.title,
-          size: doc.size,
-          type: doc.type,
-        },
-      })
-    }
-
-    //FILES
-    const files = [
-      { id: 1, title: 'File 1', size: '5kb', type: 'TXT', documentId: 1 },
-      { id: 2, title: 'File 2', size: '8kb', type: 'TXT', documentId: 1 },
-      { id: 3, title: 'File 3', size: '12kb', type: 'TXT', documentId: 2 },
-      { id: 4, title: 'File 4', size: '10kb', type: 'TXT', documentId: 2 },
-      { id: 5, title: 'File 5', size: '15kb', type: 'TXT', documentId: 3 },
-    ];
-
-    for (const file of files) {
-      await db.file.create({
-        data: {
-          title: file.title,
-          size: file.size,
-          type: file.type,
-          document: {
-            connect: {
-              id: file.id
-            }
+          {
+            key: '0-1',
+            title: 'Home',
+            size: '99kb',
+            type: 'Folder',
+            children: [{ key: '0-1-0', title: 'Invoices.txt', size: '20kb', type: 'Document' }]
           }
-        },
-      })
-    }
+        ]
+      },
+      {
+        key: '1',
+        title: 'Events',
+        size: '33kb',
+        type: 'Folder',
+        children: [
+          { key: '1-0', title: 'Meeting', size: '10kb', type: 'Document' },
+          { key: '1-1', title: 'Product Launch', size: '10kb', type: 'Document' },
+          { key: '1-2', title: 'Report Review', size: '10kb', type: 'Document' }
+        ]
+      },
+      {
+        key: '2',
+        title: 'Movies',
+        size: '11kb',
+        type: 'Folder',
+        children: [
+          {
+            key: '2-0',
+            title: 'Al Pacino',
+            size: '10kb',
+            type: 'Folder',
+            children: [
+              { key: '2-0-0', title: 'Scarface', size: '10kb', type: 'Document' },
+              { key: '2-0-1', title: 'Serpico', size: '10kb', type: 'Document' }
+            ]
+          },
+          {
+            key: '2-1',
+            title: 'Robert De Niro',
+            size: '10kb',
+            type: 'Folder',
+            children: [
+              { key: '2-1-0', title: 'Goodfellas', size: '10kb', type: 'Document' },
+              { key: '2-1-1', title: 'Untouchables', size: '10kb', type: 'Document' }
+            ]
+          }
+        ]
+      }
+    ];
 
-  } catch (error) {
+    for (const post of posts) {
+      await db.post.create({
+        data: {
+          title: post.title,
+          size: post.size,
+          type: post.type,
+        },
+      });
+    }
+ } catch (error) {
     console.warn('Please define your seed data.')
     console.error(error)
   }
