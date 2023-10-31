@@ -15,6 +15,8 @@ import { useQuery } from '@redwoodjs/web';
 //     posts {
 //       id
 //       title
+      // size
+      // type
 //       body
 //       createdAt
 //     }
